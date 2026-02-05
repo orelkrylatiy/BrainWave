@@ -1,0 +1,12 @@
+# Ignore old components directory
+src/components/old_components/
+
+# Ignore UI components directory  
+src/components/ui/
+
+# Ignore built files
+dist/
+build/
+
+# Ignore node_modules
+node_modules/
