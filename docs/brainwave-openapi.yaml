@@ -40,14 +40,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/RegisterTutorRequest"
+              $ref: '#/components/schemas/RegisterTutorRequest'
             example:
               email: tutor@example.com
               password: securePassword123
               first_name: Пётр
               last_name: Сидоров
       responses:
-        "201":
+        '201':
           description: Tutor registered and session created
           headers:
             Set-Cookie:
@@ -57,13 +57,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AuthResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/auth/register-student:
     post:
@@ -75,13 +75,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/RegisterStudentRequest"
+              $ref: '#/components/schemas/RegisterStudentRequest'
             example:
               token: abc123def456
               email: student@example.com
               password: securePassword123
       responses:
-        "201":
+        '201':
           description: Student registered and linked to existing student card
           headers:
             Set-Cookie:
@@ -91,15 +91,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AuthResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/auth/login:
     post:
@@ -111,12 +111,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/LoginRequest"
+              $ref: '#/components/schemas/LoginRequest'
             example:
               email: user@example.com
               password: securePassword123
       responses:
-        "200":
+        '200':
           description: User logged in and session created
           headers:
             Set-Cookie:
@@ -126,13 +126,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AuthResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/auth/logout:
     post:
@@ -142,12 +142,12 @@ paths:
       security:
         - sessionCookie: []
       responses:
-        "204":
+        '204':
           description: User logged out, session invalidated, cookie cleared
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/auth/me:
     get:
@@ -157,16 +157,16 @@ paths:
       security:
         - sessionCookie: []
       responses:
-        "200":
+        '200':
           description: Current authenticated user
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/auth/forgot-password:
     post:
@@ -178,20 +178,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ForgotPasswordRequest"
+              $ref: '#/components/schemas/ForgotPasswordRequest'
             example:
               email: user@example.com
       responses:
-        "200":
+        '200':
           description: Password reset request accepted
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SuccessResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/auth/reset-password:
     post:
@@ -203,23 +203,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ResetPasswordRequest"
+              $ref: '#/components/schemas/ResetPasswordRequest'
             example:
               token: reset-token
               password: newSecurePassword123
       responses:
-        "200":
+        '200':
           description: Password reset successfully
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SuccessResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/profile:
     get:
@@ -229,16 +229,16 @@ paths:
       security:
         - sessionCookie: []
       responses:
-        "200":
+        '200':
           description: Current user profile
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Profile"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Profile'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     patch:
       tags: [Profile]
       summary: Update own profile
@@ -250,24 +250,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UpdateProfileRequest"
+              $ref: '#/components/schemas/UpdateProfileRequest'
             example:
               first_name: Пётр
               last_name: Иванов
               avatar_url: https://storage.example.com/avatar.png
       responses:
-        "200":
+        '200':
           description: Updated profile
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Profile"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Profile'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/profile/change-password:
     post:
@@ -281,23 +281,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ChangePasswordRequest"
+              $ref: '#/components/schemas/ChangePasswordRequest'
             example:
               current_password: oldPassword123
               new_password: newSecurePassword123
       responses:
-        "200":
+        '200':
           description: Password changed successfully
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SuccessResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/students:
     get:
@@ -319,21 +319,21 @@ paths:
           required: false
           schema:
             type: string
-        - $ref: "#/components/parameters/PageParam"
-        - $ref: "#/components/parameters/LimitParam"
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
       responses:
-        "200":
+        '200':
           description: Paginated list of students owned by current tutor
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PaginatedStudentsResponse"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/PaginatedStudentsResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     post:
       tags: [Students]
       summary: Create student card
@@ -345,29 +345,29 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateStudentRequest"
+              $ref: '#/components/schemas/CreateStudentRequest'
             example:
               first_name: Иван
               last_name: Петров
               class: 11
               subject: Математика
-              contact: "+79001234567"
+              contact: '+79001234567'
               notes: Готовится к ЕГЭ
       responses:
-        "201":
+        '201':
           description: Student card created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Student"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Student'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/students/{id}:
     get:
@@ -377,22 +377,22 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       responses:
-        "200":
+        '200':
           description: Student detail with linked user and stats
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/StudentDetail"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/StudentDetail'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     patch:
       tags: [Students]
       summary: Update student card
@@ -400,37 +400,37 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UpdateStudentRequest"
+              $ref: '#/components/schemas/UpdateStudentRequest'
             example:
               first_name: Иван
               last_name: Иванов
               class: 10
               subject: Информатика
-              contact: "+79001234567"
+              contact: '+79001234567'
               notes: Обновлённая заметка
       responses:
-        "200":
+        '200':
           description: Updated student card
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Student"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Student'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     delete:
       tags: [Students]
       summary: Delete student card
@@ -439,20 +439,20 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       responses:
-        "204":
+        '204':
           description: Student deleted
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/students/{id}/invite:
     post:
@@ -462,22 +462,22 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       responses:
-        "200":
+        '200':
           description: Invite generated. Previous active invite is deactivated.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Invite"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Invite'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/invites/{token}:
     get:
@@ -492,16 +492,16 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: Invite is valid
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InviteValidation"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/InviteValidation'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/assignments:
     get:
@@ -526,21 +526,21 @@ paths:
           schema:
             type: string
             example: IN_PROGRESS,UNDER_REVIEW
-        - $ref: "#/components/parameters/PageParam"
-        - $ref: "#/components/parameters/LimitParam"
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
       responses:
-        "200":
+        '200':
           description: Paginated list of assignments
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PaginatedAssignmentsResponse"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/PaginatedAssignmentsResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     post:
       tags: [Assignments]
       summary: Create assignment
@@ -552,31 +552,31 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateAssignmentRequest"
+              $ref: '#/components/schemas/CreateAssignmentRequest'
             example:
               student_id: 550e8400-e29b-41d4-a716-446655440000
               title: Тригонометрия §15
               description: Решить задачи 1-10. Прислать фото или текст.
-              deadline: "2024-03-20T23:59:00.000Z"
+              deadline: '2024-03-20T23:59:00.000Z'
               file_ids:
                 - 550e8400-e29b-41d4-a716-446655440001
       responses:
-        "201":
+        '201':
           description: Assignment created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AssignmentDetail"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/AssignmentDetail'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/assignments/{id}:
     get:
@@ -586,20 +586,20 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       responses:
-        "200":
+        '200':
           description: Assignment detail with files and optional submission
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AssignmentDetail"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/AssignmentDetail'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     patch:
       tags: [Assignments]
       summary: Update assignment or change status
@@ -607,38 +607,38 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UpdateAssignmentRequest"
+              $ref: '#/components/schemas/UpdateAssignmentRequest'
             example:
               title: Новый заголовок
               description: Новое описание
-              deadline: "2024-03-25T23:59:00.000Z"
+              deadline: '2024-03-25T23:59:00.000Z'
               status: DONE
               review_comment: Принято, хорошая работа
       responses:
-        "200":
+        '200':
           description: Updated assignment detail
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AssignmentDetail"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/AssignmentDetail'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     delete:
       tags: [Assignments]
       summary: Delete assignment
@@ -646,18 +646,18 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       responses:
-        "204":
+        '204':
           description: Assignment deleted
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/assignments/{id}/submission:
     post:
@@ -668,36 +668,36 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateSubmissionRequest"
+              $ref: '#/components/schemas/CreateSubmissionRequest'
             example:
               text: Мой ответ...
               file_ids:
                 - 550e8400-e29b-41d4-a716-446655440001
       responses:
-        "201":
+        '201':
           description: Submission created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Submission"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Submission'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/submissions/{id}:
     patch:
@@ -708,36 +708,36 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UpdateSubmissionRequest"
+              $ref: '#/components/schemas/UpdateSubmissionRequest'
             example:
               text: Исправленный ответ
               file_ids:
                 - 550e8400-e29b-41d4-a716-446655440001
       responses:
-        "200":
+        '200':
           description: Updated submission
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Submission"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/Submission'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/files:
     post:
@@ -758,20 +758,20 @@ paths:
                   type: string
                   format: binary
       responses:
-        "201":
+        '201':
           description: Uploaded file metadata
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/FileItem"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "413":
-          $ref: "#/components/responses/PayloadTooLarge"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+                $ref: '#/components/schemas/FileItem'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /api/files/{id}:
     delete:
@@ -782,20 +782,20 @@ paths:
       security:
         - sessionCookie: []
       parameters:
-        - $ref: "#/components/parameters/IdParam"
+        - $ref: '#/components/parameters/IdParam'
       responses:
-        "204":
+        '204':
           description: File deleted
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-        "409":
-          $ref: "#/components/responses/Conflict"
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
 components:
   securitySchemes:
@@ -840,7 +840,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: VALIDATION_ERROR
             message: Имя должно быть от 2 до 100 символов
@@ -851,7 +851,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: UNAUTHORIZED
             message: Пользователь не залогинен
@@ -860,7 +860,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: FORBIDDEN
             message: Недостаточно прав
@@ -869,7 +869,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: NOT_FOUND
             message: Ресурс не найден
@@ -878,7 +878,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: CONFLICT
             message: Операция невозможна из-за бизнес-правил
@@ -887,7 +887,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: FILE_TOO_LARGE
             message: Файл слишком большой
@@ -896,7 +896,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ApiError"
+            $ref: '#/components/schemas/ApiError'
           example:
             error: INTERNAL_SERVER_ERROR
             message: Внутренняя ошибка сервера
@@ -910,7 +910,7 @@ components:
     ISODate:
       type: string
       format: date-time
-      example: "2024-03-15T10:00:00.000Z"
+      example: '2024-03-15T10:00:00.000Z'
 
     UserRole:
       type: string
@@ -970,13 +970,13 @@ components:
       required: [id, email, role, first_name, last_name, avatar_url]
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         email:
           type: string
           format: email
           example: user@example.com
         role:
-          $ref: "#/components/schemas/UserRole"
+          $ref: '#/components/schemas/UserRole'
         first_name:
           type: string
           minLength: 2
@@ -995,19 +995,19 @@ components:
 
     Profile:
       allOf:
-        - $ref: "#/components/schemas/User"
+        - $ref: '#/components/schemas/User'
         - type: object
           required: [created_at]
           properties:
             created_at:
-              $ref: "#/components/schemas/ISODate"
+              $ref: '#/components/schemas/ISODate'
 
     AuthResponse:
       type: object
       required: [user]
       properties:
         user:
-          $ref: "#/components/schemas/User"
+          $ref: '#/components/schemas/User'
 
     RegisterTutorRequest:
       type: object
@@ -1130,7 +1130,7 @@ components:
         - created_at
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         first_name:
           type: string
           minLength: 2
@@ -1156,7 +1156,7 @@ components:
           type: string
           maxLength: 100
           nullable: true
-          example: "+79001234567"
+          example: '+79001234567'
         notes:
           type: string
           maxLength: 1000
@@ -1170,20 +1170,20 @@ components:
           minimum: 0
           example: 3
         created_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     StudentDetail:
       allOf:
-        - $ref: "#/components/schemas/Student"
+        - $ref: '#/components/schemas/Student'
         - type: object
           required: [user, stats]
           properties:
             user:
               nullable: true
               allOf:
-                - $ref: "#/components/schemas/StudentLinkedUser"
+                - $ref: '#/components/schemas/StudentLinkedUser'
             stats:
-              $ref: "#/components/schemas/StudentStats"
+              $ref: '#/components/schemas/StudentStats'
 
     StudentLinkedUser:
       type: object
@@ -1194,7 +1194,7 @@ components:
           format: email
           example: student@example.com
         registered_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     StudentStats:
       type: object
@@ -1281,7 +1281,7 @@ components:
       required: [id, first_name, last_name]
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         first_name:
           type: string
           example: Иван
@@ -1301,7 +1301,7 @@ components:
           format: uri
           example: https://app.example.com/invite/abc123def456
         expires_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     InviteValidation:
       type: object
@@ -1311,9 +1311,9 @@ components:
           type: boolean
           enum: [true]
         student:
-          $ref: "#/components/schemas/PersonName"
+          $ref: '#/components/schemas/PersonName'
         tutor:
-          $ref: "#/components/schemas/PersonName"
+          $ref: '#/components/schemas/PersonName'
 
     PersonName:
       type: object
@@ -1331,7 +1331,7 @@ components:
       required: [id, name, url, size, mime_type, uploaded_at]
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         name:
           type: string
           example: task.pdf
@@ -1347,7 +1347,7 @@ components:
           type: string
           example: application/pdf
         uploaded_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     Submission:
       type: object
@@ -1361,9 +1361,9 @@ components:
         - updated_at
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         assignment_id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         text:
           type: string
           maxLength: 5000
@@ -1371,16 +1371,16 @@ components:
         files:
           type: array
           items:
-            $ref: "#/components/schemas/FileItem"
+            $ref: '#/components/schemas/FileItem'
         review_comment:
           type: string
           maxLength: 2000
           nullable: true
           example: null
         submitted_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
         updated_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     Assignment:
       type: object
@@ -1395,28 +1395,28 @@ components:
         - updated_at
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         title:
           type: string
           minLength: 3
           maxLength: 200
           example: Тригонометрия §15
         status:
-          $ref: "#/components/schemas/AssignmentStatus"
+          $ref: '#/components/schemas/AssignmentStatus'
         deadline:
           type: string
           format: date-time
           nullable: true
-          example: "2024-03-20T23:59:00.000Z"
+          example: '2024-03-20T23:59:00.000Z'
         student:
-          $ref: "#/components/schemas/StudentShort"
+          $ref: '#/components/schemas/StudentShort'
         has_submission:
           type: boolean
           example: true
         created_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
         updated_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     AssignmentDetail:
       type: object
@@ -1433,7 +1433,7 @@ components:
         - updated_at
       properties:
         id:
-          $ref: "#/components/schemas/UUID"
+          $ref: '#/components/schemas/UUID'
         title:
           type: string
           minLength: 3
@@ -1444,26 +1444,26 @@ components:
           maxLength: 5000
           example: Решить задачи 1-10. Прислать фото или текст.
         status:
-          $ref: "#/components/schemas/AssignmentStatus"
+          $ref: '#/components/schemas/AssignmentStatus'
         deadline:
           type: string
           format: date-time
           nullable: true
-          example: "2024-03-20T23:59:00.000Z"
+          example: '2024-03-20T23:59:00.000Z'
         files:
           type: array
           items:
-            $ref: "#/components/schemas/FileItem"
+            $ref: '#/components/schemas/FileItem'
         student:
-          $ref: "#/components/schemas/StudentShort"
+          $ref: '#/components/schemas/StudentShort'
         submission:
           nullable: true
           allOf:
-            - $ref: "#/components/schemas/Submission"
+            - $ref: '#/components/schemas/Submission'
         created_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
         updated_at:
-          $ref: "#/components/schemas/ISODate"
+          $ref: '#/components/schemas/ISODate'
 
     CreateAssignmentRequest:
       type: object
@@ -1504,7 +1504,7 @@ components:
           format: date-time
           nullable: true
         status:
-          $ref: "#/components/schemas/AssignmentStatus"
+          $ref: '#/components/schemas/AssignmentStatus'
         review_comment:
           type: string
           maxLength: 2000
@@ -1543,9 +1543,9 @@ components:
         data:
           type: array
           items:
-            $ref: "#/components/schemas/Student"
+            $ref: '#/components/schemas/Student'
         pagination:
-          $ref: "#/components/schemas/PaginationMeta"
+          $ref: '#/components/schemas/PaginationMeta'
 
     PaginatedAssignmentsResponse:
       type: object
@@ -1554,6 +1554,6 @@ components:
         data:
           type: array
           items:
-            $ref: "#/components/schemas/Assignment"
+            $ref: '#/components/schemas/Assignment'
         pagination:
-          $ref: "#/components/schemas/PaginationMeta"
+          $ref: '#/components/schemas/PaginationMeta'

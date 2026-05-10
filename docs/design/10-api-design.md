@@ -1396,11 +1396,11 @@ export type ISODate = string;
 
 // Roles
 
-export type UserRole = "TUTOR" | "STUDENT";
+export type UserRole = 'TUTOR' | 'STUDENT';
 
 // Assignment statuses
 
-export type AssignmentStatus = "IN_PROGRESS" | "UNDER_REVIEW" | "DONE";
+export type AssignmentStatus = 'IN_PROGRESS' | 'UNDER_REVIEW' | 'DONE';
 
 // User
 
@@ -1475,13 +1475,13 @@ export type Assignment = {
   title: string;
   status: AssignmentStatus;
   deadline: ISODate | null;
-  student: Pick<Student, "id" | "first_name" | "last_name">;
+  student: Pick<Student, 'id' | 'first_name' | 'last_name'>;
   has_submission: boolean;
   created_at: ISODate;
   updated_at: ISODate;
 };
 
-export type AssignmentDetail = Omit<Assignment, "has_submission"> & {
+export type AssignmentDetail = Omit<Assignment, 'has_submission'> & {
   description: string;
   files: FileItem[];
   submission: Submission | null;
@@ -1497,8 +1497,8 @@ export type Invite = {
 
 export type InviteValidation = {
   valid: true;
-  student: Pick<Student, "first_name" | "last_name">;
-  tutor: Pick<User, "first_name" | "last_name">;
+  student: Pick<Student, 'first_name' | 'last_name'>;
+  tutor: Pick<User, 'first_name' | 'last_name'>;
 };
 
 // Pagination

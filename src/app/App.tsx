@@ -1,9 +1,11 @@
-import "./App.module.css";
+import './App.module.css';
+import {DashboardPage} from "../pages/DashboardPage/DashboardPage.tsx";
+import './styles/global.css';
 
 function App() {
-  const a = 4;
-  console.log(a);
-  return <></>;
+  return <>
+    <DashboardPage/>
+  </>;
 }
 
 export default App;
