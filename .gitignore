@@ -22,3 +22,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# AI agents
+.agents/
+
+# Personal tracking
+TODO.md
+LEARNINGS.md
+MILESTONES.md
+
+# Test coverage
+coverage/
+
+# Environment
+.env
+.env.local
+.env.*.local

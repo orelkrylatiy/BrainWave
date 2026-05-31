@@ -1,9 +1,15 @@
-import logoSrc from '../assets/brainwave-logo-black.png';
+import { Link } from 'react-router-dom';
 
 interface Props {
   size?: number;
+  src: string;
+  className?: string;
 }
 
-export const Logo = ({ size = 32 }: Props) => {
-  return <img src={logoSrc} alt="Logo" width={size} height={size} />;
+export const Logo = ({ src, size = 32, className }: Props) => {
+  return (
+    <Link className={className} to="/">
+      <img src={src} alt="Logo" width={size} height={size} />
+    </Link>
+  );
 };

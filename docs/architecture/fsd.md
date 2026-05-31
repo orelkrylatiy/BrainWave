@@ -11,4 +11,4 @@
    - [Sitemap](./design/sitemap.md)
    - [User Flows](./design/user_flows.md)
 
-- [Figma design](https://www.figma.com/design/6r2DGSA5bskPcxw05ItaHm/Brainwave-Lite-platform?node-id=0-1&t=pw1kjy7Tan2UrgK8-1)
+- [Figma design](https://www.figma.com/design/amTy3clwPcjbv0AU3KtMmJ/Brainwave-Lite-platform?node-id=1480-0&t=Vf4XWm8TlnVQnIXh-1)
