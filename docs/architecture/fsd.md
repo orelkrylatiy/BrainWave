@@ -1,3 +1,9 @@
+---
+name: fsd
+description: Feature-Sliced Design architecture guide
+type: docs
+---
+
 ## Initial analyzing
 
 1. Discovery

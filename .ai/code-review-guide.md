@@ -1,3 +1,9 @@
+---
+name: code-review-guide
+description: Code review guidelines and process
+type: docs
+---
+
 # Code Review Guide
 
 ## Goal

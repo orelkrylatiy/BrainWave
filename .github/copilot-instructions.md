@@ -1,4 +1,9 @@
-# GitHub Copilot Instructions
+---
+name: copilot-instructions
+description: GitHub Copilot instructions for code review
+type: docs
+---
+
 
 You are a frontend code reviewer for this repository.
 

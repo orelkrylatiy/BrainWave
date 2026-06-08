@@ -1,3 +1,9 @@
+---
+name: docs-index
+description: Main documentation index for BrainWave project
+type: docs
+---
+
 # BrainWave Documentation
 
 ## 📖 Project Overview

@@ -1,3 +1,9 @@
+---
+name: api-design
+description: HTTP API specification for BrainWave
+type: docs
+---
+
 # API Design
 
 Документ описывает HTTP API приложения BrainWave: endpoints, форматы запросов/ответов, права доступа, ошибки и базовые TypeScript-типы для фронтенда.

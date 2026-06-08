@@ -1,4 +1,9 @@
-# Карта экранов
+---
+name: sitemap
+description: Screen map with URLs and navigation flows
+type: docs
+---
+
 
 Документ описывает все экраны приложения, их URL и ключевые переходы.
 Используется как основа для проектирования роутинга, навигации и wireframes.

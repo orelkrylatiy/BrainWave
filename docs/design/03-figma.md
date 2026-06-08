@@ -1,4 +1,9 @@
-## 🎨 Имена для всех экранов
+---
+name: figma
+description: Figma design reference
+type: docs
+---
+
 
 https://www.figma.com/design/amTy3clwPcjbv0AU3KtMmJ/Brainwave-Lite-platform?node-id=1480-0&t=DHziHiA1NQIYPpew-1
 

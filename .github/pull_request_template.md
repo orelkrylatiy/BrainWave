@@ -1,4 +1,9 @@
-<!-- ci-comment-id:review_tags -->
+---
+name: pull-request-template
+description: Pull request template for merge requests
+type: template
+---
+
 
 <!-- ai-pr-description:start -->
 

@@ -1,4 +1,9 @@
-# AGENTS.md — How to Work on This Project
+---
+name: agents
+description: Instructions for AI assistants working on this project
+type: docs
+---
+
 
 ## 🎯 Project Goal
 

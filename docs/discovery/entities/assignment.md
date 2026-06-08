@@ -1,4 +1,9 @@
-# Assignment
+---
+name: assignment
+description: assignment entity definition
+type: docs
+---
+
 
 **Определение:** Домашнее задание, которое репетитор выдаёт конкретному
 ученику. Содержит описание задачи, материалы и дедлайн. Имеет статус,

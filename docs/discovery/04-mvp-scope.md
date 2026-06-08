@@ -1,3 +1,9 @@
+---
+name: mvp-scope
+description: MVP feature scope definition
+type: docs
+---
+
 ## 📄 docs/04-mvp-scope.md
 
 ### MVP Scope

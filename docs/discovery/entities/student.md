@@ -1,4 +1,9 @@
-# Student
+---
+name: student
+description: student entity definition
+type: docs
+---
+
 
 **Определение:** Ученик — пользователь системы, привязанный к одному
 репетитору. Получает ДЗ и сдаёт ответы на проверку.

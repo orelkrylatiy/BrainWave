@@ -1,3 +1,9 @@
+---
+name: BrainWave
+description: Tutor-help platform built with React + TypeScript + Vite
+type: project
+---
+
 # _BrainWave_
 
 ### **Tutor-help platform**
