@@ -25,6 +25,7 @@ jobs:
           ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Generate and update PR description
+        if: ${{ secrets.OPENAI_API_KEY != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
