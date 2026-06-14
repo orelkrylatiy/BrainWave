@@ -1,3 +1,9 @@
+---
+name: why
+description: Project mission and success criteria
+type: docs
+---
+
 # Зачем я делаю этот проект
 
 Главная цель: вырасти до middle/senior фронт.

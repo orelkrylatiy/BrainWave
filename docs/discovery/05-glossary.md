@@ -1,3 +1,9 @@
+---
+name: glossary
+description: Domain terminology and data architecture decisions
+type: docs
+---
+
 # Глоссарий проекта
 
 Документ описывает ключевые сущности предметной области. Используется как

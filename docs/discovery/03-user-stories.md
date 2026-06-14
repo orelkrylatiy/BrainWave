@@ -1,3 +1,9 @@
+---
+name: user-stories
+description: Feature backlog organized by MVP and v2
+type: docs
+---
+
 ## 📄 docs/03-user-stories.md
 
 ### User Stories — бэклог

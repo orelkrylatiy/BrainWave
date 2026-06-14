@@ -1,4 +1,9 @@
-# File
+---
+name: file
+description: file entity definition
+type: docs
+---
+
 
 **Определение:** Метаданные прикреплённого файла. Сам файл хранится во
 внешнем файловом хранилище (S3 / Supabase Storage / диск сервера).
